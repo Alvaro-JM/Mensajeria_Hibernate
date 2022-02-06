@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/mensajeria</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password"></property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <!-- 'true' muestra las sentencias sql que ejecuta por debajo -->
+    <property name="hibernate.show_sql">true</property>
+    <!-- 'create' elimina y vuelve a crear el esquema de la base de datos al iniciar -->
+    <!-- 'create-drop' crear el esquema de la base de datos al iniciar y lo elimina al salir -->
+    <!-- 'update' crear el esquema si no existe al iniciar y actualiza tablas/columnas al iniciar -->
+    <property name="hbm2ddl.auto">update</property>
+    <!-- Mapea las siguientes clases anotadas si trabajásemos con mapeo XML en lugar de class pondríamos resource -->
+    <mapping class="mensajeria.modelo.Empresa" />
+    <mapping class="mensajeria.modelo.Oficina" />
+    <mapping class="mensajeria.modelo.Repartidor" />
+    <mapping class="mensajeria.modelo.Paquete" /> 
+  </session-factory>
+</hibernate-configuration>
